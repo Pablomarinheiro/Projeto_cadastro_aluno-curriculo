@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/front.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <title>Home</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navegacao">
+        <a href="../index.html" class="logo"
+          ><i class="fa-solid fa-house"></i> NAE</a
+        >
+        <div class="links">
+          <a href="cadastro_aluno.html">Cadastro</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <section class="container_forms">
+          <h2>Cadastrar Novo Aluno</h2>
+          <form action="../php/form_aluno.php" method="post">
+            <div class="cadastro_aluno">
+              <label for="nome">NOME COMPLETO:</label>
+              <input type="text" name="nome" id="nome" required />
+            </div>
+            <div class="cadastro_aluno">
+              <label for="cpf">CPF :</label
+              ><input type="text" name="cpf" id="cpf" required maxlength="14" />
+            </div>
+            <div class="cadastro_aluno">
+              <label for="data_nascimento">DATA DE NASCIMENTO :</label>
+              <input
+                type="date"
+                name="data_nascimento"
+                id="data_nascimento"
+                required
+              />
+            </div>
+            <div class="cadastro_aluno">
+              <label for="email">EMAIL :</label
+              ><input type="email" name="email" id="email" required />
+            </div>
+            <div class="cadastro_aluno">
+              <label for="telefone">TELEFONE :</label
+              ><input type="tel" name="telefone" id="telefone" required />
+            </div>
+            <div class="cadastro_aluno">
+              <label for="endereco">ENDEREÇO :</label
+              ><input type="text" name="endereco" id="endereco" required />
+            </div>
+            <div class="cadastro_aluno">
+              <label for="curso">CURSO :</label
+              ><select name="curso" id="curso">
+                <option value="Administração">Administração</option>
+                <option value="Ciências Contábeis">Ciências Contábeis</option>
+                <option value="Direito">Direito</option>
+                <option value="Engenharia de Software">
+                  Engenharia de Software
+                </option>
+                <option value="Pedagogia">Pedagogia</option>
+              </select>
+            </div>
+            <div class="cadastro_aluno">
+              <label for="ano">ANO :</label>
+              <select name="ano" id="ano">
+                <option value="1">1° Ano</option>
+                <option value="2">2° Ano</option>
+                <option value="3">3° Ano</option>
+                <option value="4">4° Ano</option>
+                <option value="5">5° Ano</option>
+              </select>
+            </div>
+            <input id="btn" type="submit" value="Cadastrar Aluno" />
+          </form>
+        </section>
+      </div>
+    </main>
+    <footer class="rodape"><h3>Feito por Pablo 2025</h3></footer>
+  </body>
+</html>

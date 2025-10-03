@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cor-primaria: #0c64a3;
+  --cor-secundaria: #00a1df;
+  --cor-texto-primaria: #333333;
+  --cor-texto-secundaria: #aeaeae;
+  --fundo-padrao: rgba(222, 222, 222, 0.947);
+  --cor-fundo-primaria: #f4f7f6;
+  --cor-fundo-secundaria: rgb(205, 204, 204);
+  --cor-branco: #ffffff;
+  --cor-checado: rgb(255, 54, 54);
+  --sombra-black: 0 8px 12px rgba(0, 0, 0, 0.15);
+  --sombra-blue: 6px 8px 12px rgba(44, 101, 255, 0.15);
+}
+
+body {
+  font-family: "Poppins", Georgia, "Times New Roman", Times, sans-serif;
+  background-color: var(--fundo-padrao);
+  color: var(--cor-texto-primaria);
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: var(--cor-primaria);
+  font-weight: 600;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.navegacao {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navegação */
+header {
+  background-color: var(--cor-branco);
+  padding: 20px 0;
+  box-shadow: var(--sombra-black);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--cor-primaria);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.logo i {
+  margin-right: 5px;
+}
+
+.links a {
+  text-decoration: none;
+  margin-left: 25px;
+  color: var(--cor-texto-primaria);
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 5px;
+  transition: 0.5s ease;
+}
+
+.links a:hover {
+  color: var(--cor-secundaria);
+}
+
+.links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--cor-secundaria);
+  transition: 0.5s ease;
+}
+.links a:hover::after {
+  width: 100%;
+}
+
+main {
+  padding: 40px 0;
+}
+
+.container {
+  background-color: var(--cor-fundo-primaria);
+  border-radius: 20px;
+  border: 5px solid var(--cor-fundo-primaria);
+  margin: 0 10px;
+  padding: 0 20px;
+}
+
+.inicio {
+  display: flex;
+}
+.foto img {
+  width: 120%;
+  max-width: 1000px;
+  height: auto;
+  max-height: 400px;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 30px;
+  transition: 0.4s linear;
+}
+
+.foto img:hover {
+  box-shadow: var(--sombra-blue);
+}
+
+.descricao {
+  text-align: left;
+  margin-left: 400px;
+  width: 600px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.missao h3,
+.objetivo h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.missao,
+.objetivo {
+  background: var(--cor-branco);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--sombra-blue);
+  transition: 0.3s ease, box-shadow 0.5s linear;
+}
+
+.missao:hover,
+.objetivo:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-black);
+}
+
+.valores ul {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.valores li {
+  background-color: var(--cor-branco);
+  box-shadow: var(--sombra-blue);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.valores li:hover {
+  transform: scale(1.03);
+}
+
+.valores li i {
+  color: var(--cor-secundaria);
+  font-size: 1.5rem;
+  margin-right: 20px;
+  width: 30px;
+  text-align: center;
+}
+
+.valores li i:hover {
+  color: var(--cor-primaria);
+}
+
+.rodape h3 {
+  color: var(--cor-texto-primaria);
+  font-size: 1.4rem;
+}
+
+.container_forms {
+  padding: 3px;
+  margin: 3px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--cor-fundo-primaria);
+}
+
+.cadastro_aluno {
+  color: var(--cor-texto-secundaria);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.cadastro_aluno label {
+  display: block;
+}
+
+.cadastro_aluno input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--cor-texto-secundaria);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.cadastro_aluno select {
+  border-radius: 5px;
+  padding: 0.3rem;
+  border: 1px solid var(--cor-texto-secundaria);
+}
+
+.cadastro_aluno select option {
+  color: var(--cor-primaria);
+}
+
+.cadastro_aluno select option:checked {
+  color: var(--cor-checado);
+}
+
+#btn {
+  display: block;
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  color: var(--cor-branco);
+  background-color: #2a80e9;
+  cursor: pointer;
+  font-size: 15px;
+  opacity: 90%;
+  transition: 0.3s ease;
+}
+
+#btn:hover {
+  color: gold;
+  transform: scale(1.01);
+  background-color: #021385;
+}
