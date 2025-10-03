@@ -1,4 +1,4 @@
-# 👋 Olá! Eu sou o Pablo Marinheiro
+# 👋 Olá! Eu sou o Pablo Eduardo
 
 🎯 Desenvolvedor em formação, explorando o universo da tecnologia e apaixonado por resolver problemas com código.
 
