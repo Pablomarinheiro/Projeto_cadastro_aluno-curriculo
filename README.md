@@ -10,8 +10,8 @@
 - 🌱 Atualmente estudando:
   - Lógica de programação
   - Estruturas de dados
-  - Linguagem **PHP**,**C**,**C#**,**PYTHON**
-  - **HTML**, **CSS**,**JAVASCRIPT**
+  - Linguagem **PHP**, **C**, **C#**, **PYTHON**
+  - **HTML**, **CSS**, **JAVASCRIPT**
 - 👀 Tenho grande interesse em desenvolvimento **web** - **desktop**.
 - 🤝 Buscando colaborar com projetos de aprendizado, open source ou pessoais.
 
