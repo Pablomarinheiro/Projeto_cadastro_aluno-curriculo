@@ -10,9 +10,9 @@
 - 🌱 Atualmente estudando:
   - Lógica de programação
   - Estruturas de dados
-  - Linguagem **Python**
-  - **HTML**, **CSS** e **JavaScript**
-- 👀 Tenho grande interesse em desenvolvimento **web** e **mobile**.
+  - Linguagem **PHP**,**C**,**C#**,**PYTHON**
+  - **HTML**, **CSS**,**JAVASCRIPT**
+- 👀 Tenho grande interesse em desenvolvimento **web** - **desktop**.
 - 🤝 Buscando colaborar com projetos de aprendizado, open source ou pessoais.
 
 ---
@@ -28,7 +28,6 @@
 
 - ⚡ Curioso por novas tecnologias.
 - 🧠 Acredito que a programação é uma ferramenta poderosa para **transformar ideias em soluções reais**.
-- 😄 Pronomes: Ele/Dele
 
 ---
 
