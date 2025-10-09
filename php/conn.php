@@ -1,13 +1,14 @@
 <?php
+
 $host = 'localhost';
 $user = 'root';
-$pass = '';
-$db = 'nac';
+$password = '';
+$database = 'nac';
 
-$conn = new mysqli(hostname: $host, username: $user, password: $pass, database: $db);
+$conn = new mysqli($host, $user, $password, $database);
 
-$conn->set_charset(charset: "utf8mb4");
+$conn->set_charset("utf8mb4");
 
-if ($conn->error) {
-    die("Error : falha na conexão" . $conn->connect_error);
+if ($conn->connect_error) {
+    die ("ERROR : Falha na conexão" . $conn->connect_error);
 }
