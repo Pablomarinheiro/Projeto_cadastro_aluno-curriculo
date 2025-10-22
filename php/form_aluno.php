@@ -15,6 +15,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $curso = trim($_POST['curso']);
     $ano = trim($_POST['ano']);
 
+    $sql_check = "SELECT * FROM alunos WHERE id_aluno = ?";
+    $stmt_check = $conn->prepare($sql_check);
+    $stmt_check->bind_param('s', $id_aluno);
+    $stmt_check->execute();
+    $stmt_check->store_result();
+
     $sql = "INSERT INTO alunos (nome, cpf, data_nascimento, email, telefone, endereco, curso, ano)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 

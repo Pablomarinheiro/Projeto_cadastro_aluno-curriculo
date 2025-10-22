@@ -17,10 +17,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $curso = trim($_POST['curso']);
     $ano = trim($_POST['ano']);
 
-    $sql_aluno = "UPDATE alunos SET nome = ?, cpf = ?, data_nascimento = ?, email = ?, telefone = ?, endereco = ?, curso = ?, ano = ? 
-            WHERE  id_aluno = ?";
 
-    $stmt_aluno = $conn->prepare($sql);
+    $sql_aluno = "UPDATE alunos SET nome = ?, cpf = ?, data_nascimento = ?, email = ?, telefone = ?, endereco = ?, curso = ?, ano = ? 
+                  WHERE  id_aluno = ?";
+
+    $stmt_aluno = $conn->prepare($sql_aluno);
 
     if ($stmt_aluno === false) {
         die("ERROR : A preparação não foi executada" . $conn->error);
@@ -29,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt_aluno->bind_param("ssssssssi", $nome, $cpf, $data_nascimento, $email, $telefone, $endereco, $curso, $ano, $id_aluno);
 
     if ($stmt_aluno->execute()) {
-        header("Location : filtro.php");
+        header("Location: filtro.php");
         exit();
     } else {
         $erro = "Erro ao autualizar os dados: " . $stmt_aluno->error;
@@ -95,8 +96,9 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                     <p class="erro"><?php echo htmlspecialchars($erro); ?></p>
                 <?php endif; ?>
                 <?php if ($aluno):  ?>
-                    <form action="form_aluno.php?id=<?php echo $aluno['id_aluno']; ?>" method="POST" enctype="multipart/form-data">
+                    <form action="editar.php" method="POST">
                         <div class="cadastro_aluno">
+                            <input type="hidden" name="id_aluno" value="<?php echo htmlentities($aluno['id_aluno']) ?>">
                             <label for="nome">NOME COMPLETO:</label>
                             <input type="text" name="nome" id="nome" value="<?php echo htmlspecialchars($aluno['nome']); ?>" required />
                         </div>
@@ -113,31 +115,31 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                                 required />
                         </div>
                         <div class="cadastro_aluno">
-                            <label for="email">EMAIL :</label><input type="email" name="email" id="email" value="<?php echo htmlspecialchars($aluno['email']) ?>;" required />
+                            <label for="email">EMAIL :</label><input type="email" name="email" id="email" value="<?php echo htmlspecialchars($aluno['email']); ?>" required />
                         </div>
                         <div class="cadastro_aluno">
-                            <label for="telefone">TELEFONE :</label><input type="tel" name="telefone" id="telefone" value="<?php echo htmlspecialchars($aluno['telefone']) ?>;" required />
+                            <label for="telefone">TELEFONE :</label><input type="tel" name="telefone" id="telefone" value="<?php echo htmlspecialchars($aluno['telefone']); ?>" required />
                         </div>
                         <div class="cadastro_aluno">
-                            <label for="endereco">ENDEREÇO :</label><input type="text" name="endereco" id="endereco" value="<?php echo htmlspecialchars($aluno['endereco']) ?>;" required />
+                            <label for="endereco">ENDEREÇO :</label><input type="text" name="endereco" id="endereco" value="<?php echo htmlspecialchars($aluno['endereco']); ?>" required />
                         </div>
                         <div class="cadastro_aluno">
                             <label for="curso">CURSO :</label><select name="curso" id="curso">
                                 <option value="Administração <?php if (isset($aluno['curso']) && $aluno['curso'] == 'Administração') echo 'selected'; ?> ">Administração</option>
                                 <option value="Ciências Contábeis" <?php if (isset($aluno['curso']) && $aluno['curso'] == 'Ciências Contábeis') echo 'selected'; ?>>Ciências Contábeis</option>
                                 <option value="Direito" <?php if (isset($aluno['curso']) && $aluno['curso'] == 'Direito') echo 'selected';   ?>>Direito</option>
-                                <option value="Engenharia de Software"<?php if (isset($aluno['curso']) && $aluno['curso'] == 'Engenharia de Software') echo 'selected';?>>Engenharia de Software</option>
-                                <option value="Pedagogia" <?php if (isset($aluno['curso']) && $aluno['curso'] == 'Pedagogia') echo 'selected';?>>Pedagogia</option>
+                                <option value="Engenharia de Software" <?php if (isset($aluno['curso']) && $aluno['curso'] == 'Engenharia de Software') echo 'selected'; ?>>Engenharia de Software</option>
+                                <option value="Pedagogia" <?php if (isset($aluno['curso']) && $aluno['curso'] == 'Pedagogia') echo 'selected'; ?>>Pedagogia</option>
                             </select>
                         </div>
                         <div class="cadastro_aluno">
                             <label for="ano">ANO :</label>
                             <select name="ano" id="ano">
-                                <option value="1" <?php if(isset($aluno['ano']) && $aluno['ano'] == '1') echo 'selected';?>>1° Ano</option>
-                                <option value="2" <?php if(isset($aluno['ano']) && $aluno['ano'] == '2') echo 'selected';?>>2° Ano</option>
-                                <option value="3" <?php if(isset($aluno['ano']) && $aluno['ano'] == '3') echo 'selected';?>>3° Ano</option>
-                                <option value="4" <?php if(isset($aluno['ano']) && $aluno['ano'] == '4') echo 'selected';?>>4° Ano</option>
-                                <option value="5" <?php if(isset($aluno['ano']) && $aluno['ano'] == '5') echo 'selected';?>>5° Ano</option>
+                                <option value="1" <?php if (isset($aluno['ano']) && $aluno['ano'] == '1') echo 'selected'; ?>>1° Ano</option>
+                                <option value="2" <?php if (isset($aluno['ano']) && $aluno['ano'] == '2') echo 'selected'; ?>>2° Ano</option>
+                                <option value="3" <?php if (isset($aluno['ano']) && $aluno['ano'] == '3') echo 'selected'; ?>>3° Ano</option>
+                                <option value="4" <?php if (isset($aluno['ano']) && $aluno['ano'] == '4') echo 'selected'; ?>>4° Ano</option>
+                                <option value="5" <?php if (isset($aluno['ano']) && $aluno['ano'] == '5') echo 'selected'; ?>>5° Ano</option>
                             </select>
                         </div>
                         <input id="btn" type="submit" value="Cadastrar Aluno" />
