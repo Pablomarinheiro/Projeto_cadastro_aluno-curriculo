@@ -45,7 +45,7 @@
 
                     $sql = "SELECT curso, ano, nome, email, telefone, id_aluno 
                             FROM alunos
-                            ORDER BY curso, nome ASC";
+                            ORDER BY curso, ano, nome ASC";
 
                     $resultado = $conn->query($sql);
 
