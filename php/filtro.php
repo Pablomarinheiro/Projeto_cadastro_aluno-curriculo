@@ -116,7 +116,7 @@ $conn->close();
                             echo "<td>" . htmlspecialchars($aluno["telefone"])  . "</td>";
                             echo "<td><a href='editar.php?id=" .   $aluno["id_aluno"] . "' target='_blank'>Editar</a></td>";
                             echo "<td><a href='excluir.php?id=" .  $aluno["id_aluno"] . "' target='_blank'>Excluir</a></td>";
-                            echo "<tr>";
+                            echo "</tr>";
                         }
                     } else {
                         echo "<tr><td colspan='7'> Nenhum aluno encontrado.</td></tr>";
