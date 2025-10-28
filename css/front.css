@@ -1,3 +1,7 @@
+Aqui está o seu CSS totalmente limpo — todos os comentários foram removidos: ``` {
+  "id": "82341", "variant":"standard", "title":"CSS sem comentários"
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +12,7 @@
   --cor-primaria: #0c64a3;
   --cor-secundaria: #00a1df;
   --cor-texto-primaria: #333333;
-  --cor-texto-secundaria: #aeaeae;
+  --cor-texto-secundaria: #4b4b4b;
   --fundo-padrao: rgba(222, 222, 222, 0.947);
   --cor-fundo-primaria: #f4f7f6;
   --cor-fundo-secundaria: rgb(205, 204, 204);
@@ -39,7 +43,6 @@ h3 {
   padding: 0 20px;
 }
 
-/* Navegação */
 header {
   background-color: var(--cor-branco);
   padding: 20px 0;
@@ -48,6 +51,7 @@ header {
   top: 0;
   z-index: 1000;
 }
+
 header nav {
   display: flex;
   justify-content: space-between;
@@ -60,6 +64,7 @@ header nav {
   font-weight: 700;
   text-decoration: none;
 }
+
 .logo i {
   margin-right: 5px;
 }
@@ -88,6 +93,7 @@ header nav {
   background-color: var(--cor-secundaria);
   transition: 0.5s ease;
 }
+
 .links a:hover::after {
   width: 100%;
 }
@@ -107,6 +113,7 @@ main {
 .inicio {
   display: flex;
 }
+
 .foto img {
   width: 120%;
   max-width: 1000px;
@@ -257,4 +264,241 @@ main {
   color: gold;
   transform: scale(1.01);
   background-color: #021385;
+}
+
+.filtro_aluno {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  padding: 20px;
+  border-radius: 7px 7px 0 0;
+  background-color: var(--cor-branco);
+  box-shadow: var(--sombra-blue);
+}
+
+.filtro_aluno label {
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-right: 5px;
+}
+
+.filtro_aluno input[type="text"],
+.filtro_aluno select {
+  border-radius: 5px;
+  padding: 0.3rem;
+  border: 1px solid var(--cor-texto-secundaria);
+}
+
+.filtro_aluno option {
+  color: var(--cor-primaria);
+}
+
+.filtro_aluno option:checked {
+  color: var(--cor-checado);
+}
+
+.filtro_aluno input[type="text"] {
+  min-width: 300px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--cor-branco);
+  border-radius: 0 0 7px 7px;
+  overflow: hidden;
+  box-shadow: var(--sombra-blue);
+}
+
+thead th {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+  padding: 15px;
+  text-align: justify;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+tbody td {
+  padding: 12px 15px;
+  color: var(--cor-texto-primaria);
+  vertical-align: middle;
+}
+
+tbody td[colspan="7"] {
+  text-align: center;
+  font-style: italic;
+  color: var(--cor-texto-secundaria);
+  padding: 25px;
+}
+
+tbody td a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  transition: background-color 0.2s ease;
+  margin-right: 5px;
+}
+
+tbody td a[href*="editar.php"] {
+  background-color: var(--cor-secundaria);
+}
+
+tbody td a[href*="editar.php"]:hover {
+  background-color: var(--cor-primaria);
+}
+
+tbody td a[href*="excluir.php"] {
+  background-color: var(--cor-checado);
+}
+
+tbody td a[href*="excluir.php"]:hover {
+  background-color: #c00;
+}
+
+.filtro_aluno .btn_filtro {
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-left: 30px;
+  border: none;
+  color: var(--cor-branco);
+  background-color: #2a80e9;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filtro_aluno .btn_filtro:hover {
+  background-color: #021385;
+  transform: scale(1.02);
+}
+
+.container_forms h2 {
+  font-size: 1.8rem;
+  color: var(--cor-primaria);
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.container_forms h4 {
+  font-size: 1.3rem;
+  color: var(--cor-texto-primaria);
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.container_forms hr {
+  display: none;
+}
+
+.label_arquivo {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--cor-texto-secundaria);
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+
+.label_arquivo:hover {
+  background-color: #eee;
+}
+
+.form_anotacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.form_anotacoes label {
+  color: var(--cor-texto-secundaria);
+  display: block;
+  font-weight: 600;
+}
+
+.form_anotacoes textarea,
+.form_anotacoes select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--cor-texto-secundaria);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.curriculos-container,
+.anotacoes-container {
+  margin-top: 20px;
+}
+
+.lista-curriculos ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.lista-curriculos li {
+  margin-bottom: 10px;
+}
+
+.lista-curriculos li a {
+  font-weight: 600;
+  color: var(--cor-primaria);
+  text-decoration: none;
+}
+
+.lista-curriculos li a:hover {
+  text-decoration: underline;
+}
+
+.lista-curriculos li em {
+  font-size: 0.9rem;
+  color: var(--cor-texto-secundaria);
+  margin-left: 10px;
+}
+
+.lista-anotacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.anotacao-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.anotacao-item strong {
+  color: var(--cor-primaria);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+
+.anotacao-item em {
+  font-size: 0.85rem;
+  color: var(--cor-texto-secundaria);
+  font-style: italic;
+}
+
+.anotacao-item p:last-of-type {
+  color: var(--cor-texto-primaria);
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
 }
